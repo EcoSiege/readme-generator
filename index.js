@@ -42,19 +42,19 @@ inquirer
 `
 # ${response.title}
 
-## Table of Contents
+## Table of Contents 
 
-* Installation Instructions
+* [Installation Instructions](#installation-instructions)
 
-* Usage
+* [Usage](#usage)
 
-* License
+* [License](#license)
 
-* Contributors
+* [Contributors](#contributors)
 
-* Tests
+* [Test information](#test-information)
 
-* Contact Information
+* [Contact Information](#contact-information)
     
 ## Installation Instructions
 
@@ -64,7 +64,7 @@ ${response.installation}
 
 ${response.usage}
 
-## Liscense
+## License
 
 ---
 
