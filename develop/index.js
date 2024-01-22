@@ -1,5 +1,9 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
+const licenses = {
+    mit: 'http://www.mitbadge.com',
+
+}
 
 inquirer
     .prompt([
@@ -21,8 +25,8 @@ inquirer
             name: 'usage'
         }, {
             type: 'input',
-            message: 'Enter your projects contruibtors',
-            name: 'contruibtors'  
+            message: 'Enter your projects contruibting guidelines',
+            name: 'contruibting'  
         }, {
             type: 'input',
             message: 'Enter your projects test instructions',
@@ -50,7 +54,7 @@ inquirer
 
 * [License](#license)
 
-* [Contributors](#contributors)
+* [Contributing](#contributing-guidlines)
 
 * [Test information](#test-information)
 
@@ -68,9 +72,9 @@ ${response.usage}
 
 ---
 
-## Contributors
+## Contributing guidlines
 
-${response.contributors}
+${response.contributing}
 
 ## Test information
 
