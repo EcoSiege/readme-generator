@@ -33,8 +33,8 @@ inquirer
             name: 'github'  
         }, {
             type: 'input',
-            message: 'Enter your Linkden username',
-            name: 'linkden'  
+            message: 'Enter your Linkedin username',
+            name: 'linkedin'  
         }
     ])
     .then((response) =>
@@ -78,7 +78,9 @@ ${response.test}
 
 ## Contact Information
 
-Github: ${response.github}
+Github: [${response.github}](https://github.com/${response.github})
+
+Linkedin: [${response.linkedin}](https://www.linkedin.com/in/${response.linkedin})
 `, (err) =>
     err ? console.error(err) : console.log('Success!'))
     )
