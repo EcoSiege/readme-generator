@@ -1,8 +1,14 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-const licenses = {
-    mit: 'http://www.mitbadge.com',
-
+const licensesBadge = {
+    mit: 'https://img.shields.io/badge/License-MIT-yellow.svg',
+    apache: 'https://img.shields.io/badge/License-Apache_2.0-blue.svg',
+    boost: 'https://img.shields.io/badge/License-Boost_1.0-lightblue.svg'
+}
+const licenseInfo = {
+    mit: 'https://opensource.org/licenses/MIT',
+    apache: 'https://opensource.org/licenses/Apache-2.0',
+    boost: 'https://www.boost.org/LICENSE_1_0.txt'
 }
 
 inquirer
@@ -37,14 +43,19 @@ inquirer
             name: 'github'  
         }, {
             type: 'input',
-            message: 'Enter your Linkedin username',
-            name: 'linkedin'  
+            message: 'Enter your Email address',
+            name: 'email'  
+        }, {
+            type: 'list',
+            message: 'Select the liscens type you are using.',
+            choices: [ mit, apache, boost],
+            name: 'license'  
         }
     ])
     .then((response) =>
     fs.writeFile('README.md',
 `
-# ${response.title}
+# ${response.title} ${licensesBadge.response.license}
 
 ## Table of Contents 
 
@@ -58,7 +69,7 @@ inquirer
 
 * [Test information](#test-information)
 
-* [Contact Information](#contact-information)
+* [Questions](#questions)
     
 ## Installation Instructions
 
@@ -70,7 +81,7 @@ ${response.usage}
 
 ## License
 
----
+${licenseInfo.response.license}
 
 ## Contributing guidlines
 
@@ -80,11 +91,13 @@ ${response.contributing}
 
 ${response.test}
 
-## Contact Information
+## Questions
+
+If you have qustions abount his project contact me at:
 
 Github: [${response.github}](https://github.com/${response.github})
 
-Linkedin: [${response.linkedin}](https://www.linkedin.com/in/${response.linkedin})
+Linkedin: [${response.email}](${response.email})
 `, (err) =>
     err ? console.error(err) : console.log('Success!'))
     )
