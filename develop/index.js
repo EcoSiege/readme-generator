@@ -11,7 +11,6 @@ const licenseInfo = {
     boost: 'https://www.boost.org/LICENSE_1_0.txt'
 }
 
-
 inquirer
     .prompt([
         {
@@ -36,7 +35,7 @@ inquirer
             name: 'contruibting'  
         }, {
             type: 'input',
-            message: 'Enter your projects test instructions.',
+            message: 'Enter your projects test information.',
             name: 'test'  
         }, {
             type: 'input',
@@ -55,8 +54,8 @@ inquirer
     ])
     .then((response) =>
     fs.writeFile('README.md',
-`
-# ${response.title} ${!['Badge of the chosen license'](licensesBadge[response.license])}
+
+`#${response.title} ![Badge of the chosen license](${licensesBadge[response.license]})
 
 ## Table of Contents 
 
