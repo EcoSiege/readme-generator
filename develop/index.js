@@ -11,6 +11,7 @@ const licenseInfo = {
     boost: 'https://www.boost.org/LICENSE_1_0.txt'
 }
 
+
 inquirer
     .prompt([
         {
@@ -48,14 +49,14 @@ inquirer
         }, {
             type: 'list',
             message: 'Select the liscens type you are using.',
-            choices: [ mit, apache, boost],
+            choices: [ 'mit', 'apache', 'boost' ],
             name: 'license'  
         }
     ])
     .then((response) =>
     fs.writeFile('README.md',
 `
-# ${response.title} ${licensesBadge.response.license}
+# ${response.title} ${!['Badge of the chosen license'](licensesBadge[response.license])}
 
 ## Table of Contents 
 
@@ -65,9 +66,9 @@ inquirer
 
 * [License](#license)
 
-* [Contributing](#contributing-guidlines)
+* [Contributing Guidlines](#contributing-guidlines)
 
-* [Test information](#test-information)
+* [Test Information](#test-information)
 
 * [Questions](#questions)
     
@@ -81,19 +82,19 @@ ${response.usage}
 
 ## License
 
-${licenseInfo.response.license}
+${licenseInfo[response.license]}
 
-## Contributing guidlines
+## Contributing Guidlines
 
 ${response.contributing}
 
-## Test information
+## Test Information
 
 ${response.test}
 
 ## Questions
 
-If you have qustions abount his project contact me at:
+If you have qustions about this project contact me at:
 
 Github: [${response.github}](https://github.com/${response.github})
 
