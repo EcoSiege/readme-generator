@@ -32,19 +32,19 @@ inquirer
             name: 'usage'
         }, {
             type: 'input',
-            message: 'Enter your projects contruibting guidelines',
+            message: 'Enter your projects contruibting guidelines.',
             name: 'contruibting'  
         }, {
             type: 'input',
-            message: 'Enter your projects test instructions',
+            message: 'Enter your projects test instructions.',
             name: 'test'  
         }, {
             type: 'input',
-            message: 'Enter your Github username',
+            message: 'Enter your Github username.',
             name: 'github'  
         }, {
             type: 'input',
-            message: 'Enter your Email address',
+            message: 'Enter your Email address.',
             name: 'email'  
         }, {
             type: 'list',
